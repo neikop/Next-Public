@@ -1,0 +1,108 @@
+.MuiDataGrid-root {
+  * {
+    outline: none !important;
+  }
+  .MuiDataGrid-columnSeparator {
+    display: none;
+  }
+  .MuiDataGrid-columnHeaderTitle {
+    font-size: 16px;
+  }
+
+  .MuiDataGrid-columnHeader {
+    background-color: rgba(0, 0, 0, 0.06);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .MuiDataGrid-columnHeader,
+  .MuiDataGrid-cell {
+    border-color: rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.94);
+    padding: 12px 16px;
+    font-size: 16px;
+
+    &:last-child {
+      border-right-width: 0px;
+    }
+  }
+
+  .MuiDataGrid-columnHeaderTitleContainer {
+    justify-content: space-between;
+
+    > .MuiDataGrid-iconButtonContainer .MuiSvgIcon-root {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .MuiDataGrid-cell.Pinned {
+    @include tablet {
+      position: sticky;
+      background: rgb(255, 255, 255);
+      z-index: 1;
+      @apply shadow-base;
+    }
+    &.-right {
+      right: 0px;
+    }
+    &.-left {
+      left: 0px;
+    }
+  }
+}
+
+.MuiDialog-root {
+  .MuiDialog-paper {
+    background-color: var(--color-neutral-dialog);
+  }
+  .MuiDialogTitle-root {
+    padding: 24px 24px 12px;
+    font-size: 22px;
+    text-align: center;
+  }
+  .MuiDialogContent-root {
+    min-height: 80px;
+    padding: 12px 24px;
+  }
+  .MuiDialogActions-root {
+    padding: 12px 24px 24px;
+  }
+}
+
+.MuiPaper-root {
+  &.MuiPaper-elevation1 {
+    @apply shadow-base;
+  }
+}
+
+.MuiButton-root {
+  &.MuiButton-outlinedInherit {
+    color: #000e;
+    border-color: #0008;
+  }
+}
+.MuiButton-textInherit {
+  background-color: rgba(255, 255, 255, 0.94);
+}
+
+.MuiLoadingButton-root {
+  .MuiLoadingButton-loadingIndicator {
+    position: static;
+    left: 0px;
+    margin-left: 4px;
+    color: #fff9 !important;
+  }
+
+  &.MuiLoadingButton-loading {
+    color: #fff9 !important;
+  }
+}
+
+.MuiButton-containedPrimary {
+  background-color: var(--color-primary-main);
+}
+.MuiButton-containedSecondary {
+  background-color: var(--color-secondary-main);
+}

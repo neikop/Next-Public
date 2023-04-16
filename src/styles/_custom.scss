@@ -1,0 +1,25 @@
+@for $i from 1 through 12 {
+  .max-line-#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: #{$i};
+    -webkit-box-orient: vertical;
+  }
+}
+
+.notistack-Snackbar {
+  .notistack-MuiContent {
+    font-size: 16px;
+    svg {
+      font-size: 24px;
+    }
+  }
+}
+
+.colored-link {
+  color: var(--color-primary-main);
+  &:hover {
+    color: var(--color-primary-dark);
+  }
+}

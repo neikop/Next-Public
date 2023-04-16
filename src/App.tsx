@@ -1,41 +1,23 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import Slider from '@mui/material/Slider';
-import PopoverMenu from './PopoverMenu';
-import ProTip from './ProTip';
+// import { AppContainer } from 'containers';
+// import { AuthLayout, PrivateLayout } from 'layouts';
+// import { Provider } from 'react-redux';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import { store } from 'reducers/store';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+const App = () => {
+  return <div>123</div>;
+  // return (
+  // <Provider store={store}>
+  //   <AppContainer>
+  //     <BrowserRouter>
+  //       <Routes>
+  //         <Route path='/auth/*' element={<AuthLayout />} />
+  //         <Route path='/*' element={<PrivateLayout />} />
+  //       </Routes>
+  //     </BrowserRouter>
+  //   </AppContainer>
+  // </Provider>
+  // );
+};
 
-export default function App() {
-  return (
-    <Container maxWidth="sm">
-      <div className="my-4">
-        <Typography variant="h4" component="h1" gutterBottom>
-          Material UI Create React App example with Tailwind CSS in TypeScript
-        </Typography>
-        <Slider
-          className="my-4"
-          defaultValue={30}
-          classes={{ active: 'shadow-none' }}
-          slotProps={{ thumb: { className: 'hover:shadow-none' } }}
-        />
-        <PopoverMenu />
-        <ProTip />
-        <Copyright />
-      </div>
-    </Container>
-  );
-}
+export default App;

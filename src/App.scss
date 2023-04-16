@@ -1,0 +1,37 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'styles/vars';
+@import 'styles/custom';
+@import 'styles/mui';
+
+body {
+  font-size: 1rem;
+  font-family: 'Montserrat' !important;
+}
+
+main {
+  min-height: 100vh;
+}
+
+* {
+  outline: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+body > iframe {
+  display: none;
+}
+
+:root {
+  --color-primary-light: #7d302f;
+  --color-primary-main: #b0052c;
+  --color-primary-dark: #330f0d;
+
+  --color-secondary-light: #b3e7ff;
+  --color-secondary-main: #4da7d0;
+  --color-secondary-dark: #00bfff;
+}
