@@ -16,6 +16,8 @@ main {
 
 * {
   outline: none !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 a:hover {
@@ -27,11 +29,11 @@ body > iframe {
 }
 
 :root {
-  --color-primary-light: #7d302f;
-  --color-primary-main: #b0052c;
-  --color-primary-dark: #330f0d;
+  --color-primary-light: #9588ff;
+  --color-primary-main: #4a3cff;
+  --color-primary-dark: #4e1eff;
 
-  --color-secondary-light: #b3e7ff;
-  --color-secondary-main: #4da7d0;
+  --color-secondary-light: #b07bff;
+  --color-secondary-main: #603bff;
   --color-secondary-dark: #00bfff;
 }

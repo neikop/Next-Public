@@ -82,6 +82,13 @@
     color: #000e;
     border-color: #0008;
   }
+  &.MuiButton-containedInherit {
+    color: var(--color-primary-main);
+    background-color: rgba(255, 255, 255, 1);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
 }
 .MuiButton-textInherit {
   background-color: rgba(255, 255, 255, 0.94);

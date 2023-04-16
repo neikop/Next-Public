@@ -17,9 +17,12 @@
   }
 }
 
-.colored-link {
-  color: var(--color-primary-main);
-  &:hover {
-    color: var(--color-primary-dark);
-  }
+.bg-primary-gradient {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-main) 100%);
+  color: white;
+}
+
+.bg-secondary-gradient {
+  background: linear-gradient(180deg, var(--color-secondary-light) 0%, var(--color-secondary-main) 100%);
+  color: white;
 }

@@ -4,7 +4,7 @@ import { RootState } from './store';
 export const profileSlice = createSlice({
   name: 'profile',
   initialState: {
-    isLoggedIn: false,
+    isLoggedIn: true,
   } as ProfileType,
   reducers: {
     signIn: (state, { payload }) => {

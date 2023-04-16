@@ -22,6 +22,7 @@ module.exports = {
       black: 'rgb(0, 0, 0)',
       white: 'rgb(255, 255, 255)',
       transparent: 'rgba(0, 0, 0, 0)',
+      orange: '#ff972b',
     },
     extend: {
       borderRadius: {

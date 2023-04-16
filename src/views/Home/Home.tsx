@@ -1,10 +1,12 @@
-import { Container } from '@mui/material';
+import { Page1, Page2, Page3 } from './components';
 
 const Home = () => {
   return (
-    <Container>
-      <div>Home</div>
-    </Container>
+    <>
+      <Page1 />
+      <Page2 />
+      <Page3 />
+    </>
   );
 };
 
