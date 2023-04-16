@@ -48,7 +48,7 @@ const Page3 = () => {
               { title: '02', content: 'Chế độ đãi ngộ đầy đủ phúc lợi' },
               { title: '03', content: 'Môi trường làm việc vui vẻ, thân thiện' },
             ].map((item, index) => (
-              <div className='flex flex-col items-center'>
+              <div key={index} className='flex flex-col items-center'>
                 <div
                   className='mb-3 border-b-2 border-orange/60 text-3xl'
                   style={{

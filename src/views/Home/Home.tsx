@@ -1,4 +1,4 @@
-import { Page1, Page2, Page3 } from './components';
+import { Page1, Page2, Page3, Page4, Page5 } from './components';
 
 const Home = () => {
   return (
@@ -6,6 +6,8 @@ const Home = () => {
       <Page1 />
       <Page2 />
       <Page3 />
+      <Page4 />
+      <Page5 />
     </>
   );
 };

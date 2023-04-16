@@ -26,3 +26,48 @@
   background: linear-gradient(180deg, var(--color-secondary-light) 0%, var(--color-secondary-main) 100%);
   color: white;
 }
+
+.slick-slider {
+  .slick-dots {
+    bottom: 12px;
+    @media (min-width: 800px) {
+      text-align: center;
+      padding-right: 16px;
+    }
+
+    li,
+    li button::before {
+      width: 40px;
+      height: 10px;
+    }
+    li.slick-active,
+    li.slick-active button::before {
+      width: 60px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    li button::before {
+      content: '';
+      opacity: 1;
+      background-color: #999;
+      border-radius: 10px;
+    }
+    li.slick-active button::before {
+      background-color: #9588ff;
+    }
+  }
+
+  .slick-arrow {
+    z-index: 1;
+    &::before {
+      font-size: 28px;
+      color: #999;
+    }
+    &.slick-prev {
+      left: 12px;
+    }
+    &.slick-next {
+      right: 20px;
+    }
+  }
+}

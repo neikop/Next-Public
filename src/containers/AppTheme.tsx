@@ -40,7 +40,6 @@ export const appTheme = createTheme({
       defaultProps: {
         variant: 'outlined',
         size: 'medium',
-        InputLabelProps: { shrink: true },
       },
     },
     MuiDialog: {
