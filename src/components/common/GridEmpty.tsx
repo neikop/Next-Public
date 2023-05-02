@@ -1,4 +1,4 @@
-import { Typography, styled } from '@mui/material';
+import { styled } from '@mui/material';
 
 const StyledGridOverlay = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -56,7 +56,7 @@ const GridEmpty = () => {
           </g>
         </g>
       </svg>
-      <Typography color='textSecondary'>No Data</Typography>
+      <div className='text-neutral-secondary'>No Data</div>
     </StyledGridOverlay>
   );
 };

@@ -17,17 +17,13 @@
   }
 }
 
-.bg-primary-gradient {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-main) 100%);
-  color: white;
-}
-
-.bg-secondary-gradient {
-  background: linear-gradient(180deg, var(--color-secondary-light) 0%, var(--color-secondary-main) 100%);
-  color: white;
-}
-
 .slick-slider {
+  margin-bottom: 0px;
+
+  .slick-list {
+    width: 100%;
+  }
+
   .slick-dots {
     bottom: 12px;
     @media (min-width: 800px) {

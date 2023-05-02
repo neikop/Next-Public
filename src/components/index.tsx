@@ -1,4 +1,3 @@
 export { default as InfiniteSlider } from 'react-slick';
 export { default as DialogClose } from './DialogClose';
-export { default as GridEmpty } from './GridEmpty';
-export { default as InputNumber } from './InputNumber';
+export { default as SwitchTheme } from './SwitchTheme';

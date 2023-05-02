@@ -17,12 +17,12 @@ const StyledListItem = styled(ListItemButton)({
 const MenuItem = ({ path, name }: { path: string; name?: string }) => {
   const location = useLocation();
   const isHome = location.pathname === privateRoute.home.path;
-  const isSelected = isHome ? location.pathname === path : location.pathname.startsWith(path);
+  const isSelected = isHome ? location.pathname.startsWith(path) : location.pathname === path;
 
   return (
     <Link to={path} className='rounded-full'>
       <StyledListItem selected={isSelected}>
-        <ListItemText classes={{ primary: 'font-semibold' }}>{name}</ListItemText>
+        <ListItemText classes={{ primary: 'font-medium' }}>{name}</ListItemText>
       </StyledListItem>
     </Link>
   );

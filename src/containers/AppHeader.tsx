@@ -1,5 +1,6 @@
 import { Logout, Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Chip, Container, Divider, Drawer, IconButton, List, Paper, Toolbar } from '@mui/material';
+import { SwitchTheme } from 'components';
 import { AppMenu } from 'containers';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -61,7 +62,8 @@ const AppHeader = () => {
           </div>
 
           <div className='flex min-w-[240px] items-center justify-end gap-2'>
-            <Chip className='font-semibold' label={username} />
+            <SwitchTheme />
+            <Chip className='font-medium' label={username} />
             <IconButton onClick={handleClickLogout}>
               <Logout />
             </IconButton>

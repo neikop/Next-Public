@@ -1,42 +1,64 @@
 @import '~@rainbow-me/rainbowkit/styles.css';
 @import '~slick-carousel/slick/slick.css';
 @import '~slick-carousel/slick/slick-theme.css';
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 @import 'styles/vars';
 @import 'styles/custom';
 @import 'styles/mui';
 
 body {
   font-size: 1rem;
-  font-family: 'Montserrat' !important;
+  font-family: 'Montserrat';
 }
 
 main {
   min-height: 100vh;
-}
-
-* {
-  outline: none !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-}
-
-a:hover {
-  text-decoration: none !important;
-}
-
-body > iframe {
-  display: none;
+  background-color: var(--color-background-main);
+  color: var(--color-text-primary);
 }
 
 :root {
-  --color-primary-light: #9588ff;
-  --color-primary-main: #4a3cff;
-  --color-primary-dark: #4e1eff;
+  --color-primary-light: #8561c5;
+  --color-primary-main: #673ab7;
+  --color-primary-dark: #482880;
 
-  --color-secondary-light: #b07bff;
-  --color-secondary-main: #603bff;
-  --color-secondary-dark: #00bfff;
+  --color-secondary-light: #5393ff;
+  --color-secondary-main: #2979ff;
+  --color-secondary-dark: #1c54b2;
+
+  --color-paper-main: #ffffff;
+  --color-paper-dark: #f0f0f0;
+  --color-paper-grey: #e0e0e0;
+
+  --color-background-main: #ffffff;
+  --color-background-dialog: #f0f0f0;
+
+  --color-text-primary: rgba(0, 0, 0, 0.96);
+  --color-text-secondary: rgba(0, 0, 0, 0.55);
+  --color-text-disabled: rgba(0, 0, 0, 0.4);
+
+  --color-border-main: rgba(0, 0, 0, 0.06);
+  --color-border-dark: rgba(0, 0, 0, 0.08);
+  --color-border-grey: rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark'] {
+  --color-paper-main: #0f0f0f;
+  --color-paper-dark: #1f1f1f;
+  --color-paper-grey: #2f2f2f;
+
+  --color-background-main: #000000;
+  --color-background-dialog: #0f0f0f;
+
+  --color-text-primary: rgba(255, 255, 255, 0.96);
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-disabled: rgba(255, 255, 255, 0.4);
+
+  --color-border-main: rgba(255, 255, 255, 0.06);
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-grey: rgba(255, 255, 255, 0.2);
 }
