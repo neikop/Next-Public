@@ -98,8 +98,6 @@ const createAppTheme = (mode?: PaletteMode) =>
     },
   });
 
-export const appTheme = createAppTheme();
-
 type Props = {
   children: JSX.Element;
 };
