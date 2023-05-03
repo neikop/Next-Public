@@ -10,16 +10,15 @@
   }
 
   .MuiDataGrid-columnHeader {
-    background-color: var(--color-border-main);
+    background-color: var(--color-paper-dark);
     &:hover {
-      background-color: var(--color-border-dark);
+      background-color: var(--color-paper-grey);
     }
   }
 
   .MuiDataGrid-columnHeader,
   .MuiDataGrid-cell {
     border-color: var(--color-border-main);
-    color: var(--color-text-primary);
     padding: 12px 16px;
     font-size: 16px;
 
@@ -54,9 +53,6 @@
 }
 
 .MuiDialog-root {
-  .MuiDialog-paper {
-    background-color: var(--color-background-dialog);
-  }
   .MuiDialogTitle-root {
     padding: 24px 24px 12px;
     font-size: 22px;
@@ -148,7 +144,7 @@
   }
 
   &.MuiButton-outlinedInherit {
-    border-color: var(--color-border-grey);
+    border-color: var(--color-border-dark);
     &.Mui-disabled,
     &.MuiLoadingButton-loading,
     .MuiLoadingButton-loadingIndicator {

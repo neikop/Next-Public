@@ -16,20 +16,12 @@ module.exports = {
       paper: {
         main: 'var(--color-paper-main)',
         dark: 'var(--color-paper-dark)',
-      },
-      background: {
-        main: 'var(--color-background-main)',
-        dialog: 'var(--color-background-dialog)',
+        grey: 'var(--color-paper-grey)',
       },
       neutral: {
         primary: 'var(--color-text-primary)',
         secondary: 'var(--color-text-secondary)',
         disbled: 'var(--color-text-disabled)',
-      },
-      border: {
-        main: 'var(--color-border-main)',
-        dark: 'var(--color-border-dark)',
-        grey: 'var(--color-border-grey)',
       },
       transparent: 'rgba(0, 0, 0, 0)',
     },
