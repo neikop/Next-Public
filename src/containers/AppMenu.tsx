@@ -33,6 +33,7 @@ const AppMenu = () => {
     <>
       <MenuItem {...privateRoute.home} />
       <MenuItem {...privateRoute.profile} />
+      <MenuItem {...privateRoute.components} />
     </>
   );
 };

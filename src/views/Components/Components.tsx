@@ -1,23 +1,41 @@
+import { DirectionsRun, Search } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Button, Container } from '@mui/material';
+import { useState } from 'react';
 
 const Components = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <Container className='space-y-10 py-10'>
-      <div className='text-[black] dark:text-[white]'>Toggle dark mode by Tailwindcss</div>
-      <div className='flex gap-3'>
-        <LoadingButton variant='contained' color='primary' loading>
-          Spinning
+      <div className='text-[black] dark:text-[white]'>
+        <span>Toggle dark mode by Tailwindcss</span>
+        <LoadingButton
+          startIcon={<Search />}
+          loading={isLoading}
+          onClick={() => {
+            setIsLoading((loading) => !loading);
+            setTimeout(() => {
+              setIsLoading((loading) => !loading);
+            }, 1000);
+          }}
+        >
+          Click to Loading
         </LoadingButton>
-        <LoadingButton variant='contained' color='primary'>
+      </div>
+      <div className='flex gap-3'>
+        <LoadingButton variant='contained' color='primary' startIcon={<DirectionsRun />} loading={isLoading}>
+          Action
+        </LoadingButton>
+        <LoadingButton variant='contained' color='primary' startIcon={<DirectionsRun />}>
           Idle
         </LoadingButton>
-        <Button variant='contained' color='primary' disabled>
+        <Button variant='contained' color='primary' disabled startIcon={<DirectionsRun />}>
           Disabled
         </Button>
 
-        <LoadingButton variant='contained' color='secondary' loading>
-          Spinning
+        <LoadingButton variant='contained' color='secondary' loading={isLoading}>
+          Action
         </LoadingButton>
         <LoadingButton variant='contained' color='secondary'>
           Idle
@@ -25,33 +43,9 @@ const Components = () => {
         <Button variant='contained' color='secondary' disabled>
           Disabled
         </Button>
-      </div>
 
-      <div className='flex gap-3'>
-        <LoadingButton variant='outlined' color='primary' loading>
-          Spinning
-        </LoadingButton>
-        <LoadingButton variant='outlined' color='primary'>
-          Idle
-        </LoadingButton>
-        <Button variant='outlined' color='primary' disabled>
-          Disabled
-        </Button>
-
-        <LoadingButton variant='outlined' color='secondary' loading>
-          Spinning
-        </LoadingButton>
-        <LoadingButton variant='outlined' color='secondary'>
-          Idle{' '}
-        </LoadingButton>
-        <Button variant='outlined' color='secondary' disabled>
-          Disabled
-        </Button>
-      </div>
-
-      <div className='flex gap-3'>
-        <LoadingButton variant='contained' color='inherit' loading>
-          Spinning
+        <LoadingButton variant='contained' color='inherit' loading={isLoading}>
+          Action
         </LoadingButton>
         <LoadingButton variant='contained' color='inherit'>
           Idle
@@ -59,14 +53,68 @@ const Components = () => {
         <Button variant='contained' color='inherit' disabled>
           Disabled
         </Button>
+      </div>
 
-        <LoadingButton variant='outlined' color='inherit' loading>
-          Spinning
+      <div className='flex gap-3'>
+        <LoadingButton variant='outlined' color='primary' startIcon={<DirectionsRun />} loading={isLoading}>
+          Action
+        </LoadingButton>
+        <LoadingButton variant='outlined' color='primary' startIcon={<DirectionsRun />}>
+          Idle
+        </LoadingButton>
+        <Button variant='outlined' color='primary' startIcon={<DirectionsRun />} disabled={true}>
+          Disabled
+        </Button>
+
+        <LoadingButton variant='outlined' color='secondary' loading={isLoading}>
+          Action
+        </LoadingButton>
+        <LoadingButton variant='outlined' color='secondary'>
+          Idle
+        </LoadingButton>
+        <Button variant='outlined' color='secondary' disabled={true}>
+          Disabled
+        </Button>
+
+        <LoadingButton variant='outlined' color='inherit' loading={isLoading}>
+          Action
         </LoadingButton>
         <LoadingButton variant='outlined' color='inherit'>
           Idle
         </LoadingButton>
-        <Button variant='outlined' color='inherit' disabled>
+        <Button variant='outlined' color='inherit' disabled={true}>
+          Disabled
+        </Button>
+      </div>
+
+      <div className='flex gap-3'>
+        <LoadingButton variant='text' color='primary' startIcon={<DirectionsRun />} loading={isLoading}>
+          Action
+        </LoadingButton>
+        <LoadingButton variant='text' color='primary' startIcon={<DirectionsRun />}>
+          Idle
+        </LoadingButton>
+        <Button variant='text' color='primary' startIcon={<DirectionsRun />} disabled={true}>
+          Disabled
+        </Button>
+
+        <LoadingButton variant='text' color='secondary' loading={isLoading}>
+          Action
+        </LoadingButton>
+        <LoadingButton variant='text' color='secondary'>
+          Idle
+        </LoadingButton>
+        <Button variant='text' color='secondary' disabled={true}>
+          Disabled
+        </Button>
+
+        <LoadingButton variant='text' color='inherit' loading={isLoading}>
+          Action
+        </LoadingButton>
+        <LoadingButton variant='text' color='inherit'>
+          Idle
+        </LoadingButton>
+        <Button variant='text' color='inherit' disabled={true}>
           Disabled
         </Button>
       </div>

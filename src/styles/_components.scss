@@ -1,0 +1,95 @@
+.MuiButton-root {
+  .MuiLoadingButton-loadingIndicator {
+    position: static;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  &.MuiLoadingButton-loading {
+    .MuiButton-startIcon {
+      display: none;
+    }
+  }
+
+  &.MuiButton-text {
+    padding: 6px 16px;
+  }
+}
+
+.MuiButton-containedPrimary {
+  background-color: var(--color-primary-main);
+}
+
+.MuiButton-containedSecondary {
+  background-color: var(--color-secondary-main);
+}
+
+.MuiButton-root {
+  &.MuiButton-containedPrimary {
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading {
+      background-color: var(--color-primary-light);
+    }
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading,
+    .MuiLoadingButton-loadingIndicator {
+      color: #fffc;
+    }
+  }
+
+  &.MuiButton-containedSecondary {
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading {
+      background-color: var(--color-secondary-light);
+    }
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading,
+    .MuiLoadingButton-loadingIndicator {
+      color: #fffc;
+    }
+  }
+
+  &.MuiButton-containedInherit {
+    background-color: var(--color-paper-dark);
+    &:hover {
+      background-color: var(--color-paper-grey);
+    }
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading,
+    .MuiLoadingButton-loadingIndicator {
+      color: var(--color-text-disabled);
+    }
+  }
+}
+
+.MuiButton-root {
+  &.MuiButton-outlinedPrimary,
+  &.MuiButton-textPrimary {
+    color: var(--color-primary-main);
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading,
+    .MuiLoadingButton-loadingIndicator {
+      color: var(--color-primary-light);
+    }
+  }
+
+  &.MuiButton-outlinedSecondary,
+  &.MuiButton-textSecondary {
+    color: var(--color-secondary-main);
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading,
+    .MuiLoadingButton-loadingIndicator {
+      color: var(--color-secondary-light);
+    }
+  }
+
+  &.MuiButton-outlinedInherit,
+  &.MuiButton-textInherit {
+    border-color: var(--color-border-dark);
+    &.Mui-disabled,
+    &.MuiLoadingButton-loading,
+    .MuiLoadingButton-loadingIndicator {
+      color: var(--color-text-disabled);
+    }
+  }
+}

@@ -77,10 +77,10 @@ const createAppTheme = (mode?: PaletteMode) =>
     },
     palette: {
       primary: {
-        main: '#673ab7',
+        main: '#3774B7',
       },
       secondary: {
-        main: '#2979ff',
+        main: '#59A059',
       },
       mode,
     },

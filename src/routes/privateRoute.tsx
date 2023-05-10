@@ -1,3 +1,4 @@
+import { Components } from 'views/Components';
 import { Home } from 'views/Home';
 import { Profile } from 'views/Profile';
 
@@ -11,6 +12,11 @@ const privateRoute = {
     path: '/profile',
     name: 'Profile',
     component: Profile,
+  },
+  components: {
+    path: '/components',
+    name: 'Components',
+    component: Components,
   },
 };
 

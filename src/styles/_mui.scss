@@ -67,12 +67,6 @@
   }
 }
 
-.MuiTab-root {
-  &.MuiTab-textColorPrimary:hover {
-    background-color: var(--color-paper-dark);
-  }
-}
-
 .MuiDialog-root {
   .MuiDialogTitle-root {
     padding: 24px 24px 12px;
@@ -98,82 +92,8 @@
   }
 }
 
-.MuiButton-root {
-  .MuiLoadingButton-loadingIndicator {
-    position: static;
-    left: 0px;
-    margin-left: 4px;
-  }
-}
-
-.MuiButton-containedPrimary {
-  background-color: var(--color-primary-main);
-}
-
-.MuiButton-containedSecondary {
-  background-color: var(--color-secondary-main);
-}
-
-.MuiButton-root {
-  &.MuiButton-containedPrimary {
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      background-color: var(--color-primary-dark);
-      color: #fffc;
-    }
-  }
-
-  &.MuiButton-containedSecondary {
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      background-color: var(--color-secondary-dark);
-      color: #fffc;
-    }
-  }
-
-  &.MuiButton-containedInherit {
+.MuiTab-root {
+  &.MuiTab-textColorPrimary:hover {
     background-color: var(--color-paper-dark);
-    &:hover {
-      background-color: var(--color-paper-grey);
-    }
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-text-disabled);
-    }
-  }
-}
-
-.MuiButton-root {
-  &.MuiButton-outlined {
-    @apply shadow-sm;
-  }
-
-  &.MuiButton-outlinedPrimary {
-    color: var(--color-primary-main);
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-primary-dark);
-    }
-  }
-
-  &.MuiButton-outlinedSecondary {
-    color: var(--color-secondary-main);
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-secondary-dark);
-    }
-  }
-
-  &.MuiButton-outlinedInherit {
-    border-color: var(--color-border-dark);
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-text-disabled);
-    }
   }
 }

@@ -5,6 +5,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import 'styles/components';
 @import 'styles/vars';
 @import 'styles/custom';
 @import 'styles/mui';
@@ -16,13 +17,13 @@ main {
 }
 
 :root {
-  --color-primary-light: #8e7dff;
-  --color-primary-main: #725dff;
-  --color-primary-dark: #4f41b2;
+  --color-primary-light: #5f8fc5;
+  --color-primary-main: #3774B7;
+  --color-primary-dark: #265180;
 
-  --color-secondary-light: #33ab9f;
-  --color-secondary-main: #009688;
-  --color-secondary-dark: #00695f;
+  --color-secondary-light: #7ab37a;
+  --color-secondary-main: #59A059;
+  --color-secondary-dark: #3e703e;
 
   // For variables
   --color-paper-main: #ffffff;
