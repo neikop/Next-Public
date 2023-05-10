@@ -4,6 +4,9 @@ module.exports = {
   theme: {
     colors: {
       primary: {
+        100: 'var(--color-primary-100)',
+        200: 'var(--color-primary-200)',
+        300: 'var(--color-primary-300)',
         light: 'var(--color-primary-light)',
         main: 'var(--color-primary-main)',
         dark: 'var(--color-primary-dark)',
@@ -28,6 +31,9 @@ module.exports = {
         dark: 'var(--color-border-dark)',
       },
       transparent: 'rgba(0, 0, 0, 0)',
+
+      white: '#ffffff',
+      black: '#000000',
     },
     extend: {
       boxShadow: {

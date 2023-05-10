@@ -1,5 +1,5 @@
-import { Box } from '@mui/material';
-import { AppFooter, AppHeader } from 'containers';
+import { AppHeader } from 'containers';
+import { useWindowSize } from 'hooks';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { authRoute, privateRoute } from 'routes';
 
 const PrivateLayout = () => {
   const navigator = useNavigate();
+  const { isTablet } = useWindowSize();
   const { isLoggedIn } = useSelector(profileSelector);
 
   useEffect(() => {
@@ -17,26 +18,16 @@ const PrivateLayout = () => {
   }, [isLoggedIn, navigator]);
 
   return (
-    <main>
+    <main style={isTablet ? {} : { marginLeft: '320px' }}>
       <AppHeader />
-      <Box
-        sx={{
-          minHeight: {
-            lg: `calc(100vh - 64px - 88px)`,
-            sm: `calc(100vh - 64px - 64px)`,
-            xs: `calc(100vh - 56px - 56px)`,
-          },
-          padding: '24px 0',
-        }}
-      >
+      <div className='p-6'>
         <Routes>
           {Object.values(privateRoute).map(({ path, component: Element }) => (
             <Route key={path} path={path} element={<Element />} />
           ))}
           <Route path='*' element={<Navigate to={privateRoute.home.path} />} />
         </Routes>
-      </Box>
-      <AppFooter />
+      </div>
     </main>
   );
 };

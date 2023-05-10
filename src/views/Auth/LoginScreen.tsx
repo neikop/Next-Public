@@ -41,7 +41,7 @@ const LoginScreen = () => {
   return (
     <Container maxWidth='sm'>
       <Paper className='space-y-6 p-6'>
-        <h4 className='text-center text-2xl font-bold'>LoginScreen</h4>
+        <div className='text-center text-2xl font-bold'>LoginScreen</div>
 
         <div className='flex flex-col items-center justify-center gap-6'>
           <Controller

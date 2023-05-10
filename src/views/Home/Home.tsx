@@ -1,11 +1,11 @@
-import { Button, Container } from '@mui/material';
+import { Button } from '@mui/material';
 import { enqueueSnackbar } from 'notistack';
 
 const Home = () => {
   return (
-    <Container>
+    <div>
       <Button onClick={() => enqueueSnackbar('Hello')}>Alert</Button>
-    </Container>
+    </div>
   );
 };
 

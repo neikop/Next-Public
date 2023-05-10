@@ -85,7 +85,7 @@ const createAppTheme = (mode?: PaletteMode) =>
       mode,
     },
     shape: {
-      borderRadius: 8,
+      borderRadius: 4,
     },
     breakpoints: {
       values: {
@@ -107,6 +107,7 @@ const AppTheme = ({ children }: Props) => {
 
   useEffect(() => {
     document.body.dataset.theme = mode;
+    document.body.className = mode;
   }, [mode]);
 
   return (

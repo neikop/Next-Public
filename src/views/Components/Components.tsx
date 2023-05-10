@@ -7,8 +7,8 @@ const Components = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <Container className='space-y-10 py-10'>
-      <div className='text-[black] dark:text-[white]'>
+    <Container className='space-y-10'>
+      <div className='dark:text-[white]'>
         <span>Toggle dark mode by Tailwindcss</span>
         <LoadingButton
           startIcon={<Search />}

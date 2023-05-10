@@ -17,12 +17,16 @@ main {
 }
 
 :root {
+  --color-primary-100: #f1f4f8;
+  --color-primary-200: #c3d5e9;
+  --color-primary-300: #87acd4;
+
   --color-primary-light: #5f8fc5;
-  --color-primary-main: #3774B7;
+  --color-primary-main: #3774b7;
   --color-primary-dark: #265180;
 
   --color-secondary-light: #7ab37a;
-  --color-secondary-main: #59A059;
+  --color-secondary-main: #59a059;
   --color-secondary-dark: #3e703e;
 
   // For variables
@@ -42,6 +46,10 @@ main {
 }
 
 body[data-theme='dark'] {
+  --color-primary-100: #517399;
+  --color-primary-200: #265180;
+  --color-primary-300: #1a3859;
+
   --color-paper-main: #121212;
   --color-paper-dark: #202020;
   --color-paper-grey: #303030;

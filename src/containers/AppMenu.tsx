@@ -1,40 +1,83 @@
-import { ListItemButton, ListItemText, styled } from '@mui/material';
+import { ArrowDropDown, ArrowRight } from '@mui/icons-material';
+import { Collapse, List, ListItemButton, ListItemText, styled } from '@mui/material';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { privateRoute } from 'routes';
 
 const StyledListItem = styled(ListItemButton)({
-  borderRadius: 9999,
-  padding: '4px 12px',
-  '&.Mui-selected': {
-    color: 'var(--color-primary-main) !important',
-    backgroundColor: 'transparent',
+  borderRadius: 16,
+  marginBottom: 8,
+  '&.MuiListItemButton-root.Mui-selected': {
+    backgroundColor: 'var(--color-primary-200)',
   },
-  '&:hover': {
-    color: 'var(--color-primary-main) !important',
+  '&.MuiListItemButton-root:hover': {
+    backgroundColor: 'var(--color-primary-300)',
+  },
+  '.MuiListItemText-primary': {
+    fontWeight: 700,
   },
 });
 
-const MenuItem = ({ path, name }: { path: string; name?: string }) => {
+type SubMenuType = {
+  name?: string | JSX.Element;
+  path: string;
+};
+
+type MenuItemProps = {
+  name?: string | JSX.Element;
+  path: string;
+  items?: SubMenuType[];
+};
+
+const MenuItem = ({ path, name, items }: MenuItemProps) => {
   const location = useLocation();
+  const [open, setOpen] = useState(location.pathname.startsWith(path));
+
   const isHome = location.pathname === privateRoute.home.path;
-  const isSelected = isHome ? location.pathname.startsWith(path) : location.pathname === path;
+  const isContain = location.pathname.startsWith(path);
+  const isSelected = isHome ? isContain : location.pathname === path;
 
   return (
-    <Link to={path} className='rounded-full'>
-      <StyledListItem selected={isSelected}>
-        <ListItemText classes={{ primary: 'font-bold' }}>{name}</ListItemText>
-      </StyledListItem>
-    </Link>
+    <>
+      {items ? (
+        <StyledListItem selected={isContain} onClick={() => setOpen(!open)}>
+          <ListItemText>{name}</ListItemText>
+          {!open ? <ArrowRight /> : <ArrowDropDown />}
+        </StyledListItem>
+      ) : (
+        <Link to={path}>
+          <StyledListItem selected={isSelected}>
+            <ListItemText>{name}</ListItemText>
+          </StyledListItem>
+        </Link>
+      )}
+
+      {items && (
+        <Collapse in={open}>
+          <List
+            className='ml-3 py-0'
+            sx={{
+              '.MuiListItemButton-root': { padding: '4px 16px' },
+            }}
+          >
+            {items?.map((sub, index) => (
+              <MenuItem key={index} {...sub} />
+            ))}
+          </List>
+        </Collapse>
+      )}
+    </>
   );
 };
 
 const AppMenu = () => {
   return (
-    <>
+    <List className='flex flex-col'>
       <MenuItem {...privateRoute.home} />
       <MenuItem {...privateRoute.profile} />
-      <MenuItem {...privateRoute.components} />
-    </>
+      <MenuItem {...privateRoute.components} items={[privateRoute.componentsButton]} />
+      <MenuItem {...privateRoute.buildings} />
+    </List>
   );
 };
 
