@@ -41,7 +41,7 @@
       position: sticky;
       background: var(--color-background-main);
       z-index: 1;
-      @apply shadow-base;
+      @apply shadow-md;
     }
     &.-right {
       right: 0px;
@@ -49,6 +49,27 @@
     &.-left {
       left: 0px;
     }
+  }
+}
+
+.MuiTextField-root {
+  .MuiInputBase-root.MuiOutlinedInput-root {
+    border-radius: 4px;
+
+    &:hover .MuiOutlinedInput-notchedOutline {
+      border-color: var(--color-primary-main);
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  }
+  .MuiInputBase-input {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.MuiTab-root {
+  &.MuiTab-textColorPrimary:hover {
+    background-color: var(--color-paper-dark);
   }
 }
 
@@ -70,10 +91,18 @@
 
 .MuiPaper-root {
   &.MuiPaper-elevation1 {
-    @apply shadow-base;
+    @apply shadow-md;
   }
   &.MuiPaper-outlined {
     border-color: var(--color-border-main);
+  }
+}
+
+.MuiButton-root {
+  .MuiLoadingButton-loadingIndicator {
+    position: static;
+    left: 0px;
+    margin-left: 4px;
   }
 }
 
@@ -83,14 +112,6 @@
 
 .MuiButton-containedSecondary {
   background-color: var(--color-secondary-main);
-}
-
-.MuiButton-root {
-  .MuiLoadingButton-loadingIndicator {
-    position: static;
-    left: 0px;
-    margin-left: 4px;
-  }
 }
 
 .MuiButton-root {
@@ -125,12 +146,16 @@
 }
 
 .MuiButton-root {
+  &.MuiButton-outlined {
+    @apply shadow-sm;
+  }
+
   &.MuiButton-outlinedPrimary {
-    color: var(--color-primary-light);
+    color: var(--color-primary-main);
     &.Mui-disabled,
     &.MuiLoadingButton-loading,
     .MuiLoadingButton-loadingIndicator {
-      color: var(--color-primary-main);
+      color: var(--color-primary-dark);
     }
   }
 

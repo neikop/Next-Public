@@ -23,14 +23,16 @@ module.exports = {
         secondary: 'var(--color-text-secondary)',
         disbled: 'var(--color-text-disabled)',
       },
+      border: {
+        main: 'var(--color-border-main)',
+        dark: 'var(--color-border-dark)',
+      },
       transparent: 'rgba(0, 0, 0, 0)',
     },
     extend: {
-      borderRadius: {
-        base: '8px',
-      },
       boxShadow: {
-        base: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+        sm: '0px 0px 4px rgba(0, 0, 0, 0.1)',
+        md: '0px 0px 8px rgba(0, 0, 0, 0.1)',
       },
     },
     screens: {

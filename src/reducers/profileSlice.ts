@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 export const profileSlice = createSlice({
@@ -7,12 +7,12 @@ export const profileSlice = createSlice({
     isLoggedIn: false,
   } as ProfileType,
   reducers: {
-    signIn: (state, { payload }) => {
+    signIn: (state, { payload }: PayloadAction<ProfileType>) => {
       const profile = { ...payload, isLoggedIn: true };
       return profile;
     },
-    signOut: (state, { payload }) => {
-      const profile = { ...payload, isLoggedIn: false };
+    signOut: (state) => {
+      const profile = { isLoggedIn: false };
       return profile;
     },
   },

@@ -23,9 +23,9 @@ const createAppTheme = (mode?: PaletteMode) =>
           disableElevation: true,
         },
         styleOverrides: {
-          sizeLarge: { minHeight: 48, minWidth: 48 },
-          sizeMedium: { minHeight: 40, minWidth: 40 },
-          sizeSmall: { minHeight: 32, minWidth: 32 },
+          sizeLarge: { minHeight: 48, minWidth: 48, fontSize: 18 },
+          sizeMedium: { minHeight: 40, minWidth: 40, fontSize: 16 },
+          sizeSmall: { minHeight: 32, minWidth: 32, fontSize: 14 },
         },
       },
       MuiTooltip: {
@@ -72,7 +72,7 @@ const createAppTheme = (mode?: PaletteMode) =>
       },
     },
     typography: {
-      fontFamily: 'Montserrat',
+      fontFamily: 'Nunito Sans',
       button: { fontWeight: 700, textTransform: 'none' },
     },
     palette: {

@@ -22,7 +22,7 @@ const MenuItem = ({ path, name }: { path: string; name?: string }) => {
   return (
     <Link to={path} className='rounded-full'>
       <StyledListItem selected={isSelected}>
-        <ListItemText classes={{ primary: 'font-medium' }}>{name}</ListItemText>
+        <ListItemText classes={{ primary: 'font-bold' }}>{name}</ListItemText>
       </StyledListItem>
     </Link>
   );

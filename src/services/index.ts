@@ -1,3 +1,2 @@
-export { Api } from './api';
-export { driverApi } from './driver';
+export { default as authService } from './auth';
 export { queryClient } from './queryClient';

@@ -1,27 +1,83 @@
-import { Button, Container, Paper } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
+import { Container, Paper, TextField } from '@mui/material';
+import { useMutation } from '@tanstack/react-query';
+import { InputPassword } from 'components/common';
+import { enqueueSnackbar } from 'notistack';
+import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { signIn } from 'reducers/profileSlice';
+import { authService } from 'services';
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
+  const { control, handleSubmit } = useForm({ mode: 'onChange' });
 
-  const handleClickLogin = () => {
-    dispatch(
-      signIn({
-        username: 'Mirana',
-      }),
-    );
+  const { mutate: login, isLoading } = useMutation(authService.login, {
+    onSuccess: ({ token, ...info }) => {
+      enqueueSnackbar('Login successfully');
+      dispatch(
+        signIn({
+          accessToken: token,
+          ...info,
+        }),
+      );
+    },
+  });
+
+  const handleClickSubmit = () => {
+    handleSubmit((values) => {
+      login({
+        ...(values as LoginBody),
+      });
+    })();
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter') {
+      handleClickSubmit();
+    }
   };
 
   return (
     <Container maxWidth='sm'>
       <Paper className='space-y-6 p-6'>
-        <h4 className='text-center text-3xl font-medium'>LoginScreen</h4>
+        <h4 className='text-center text-2xl font-bold'>LoginScreen</h4>
 
         <div className='flex flex-col items-center justify-center gap-6'>
-          <Button onClick={handleClickLogin} className='px-20'>
+          <Controller
+            name='username'
+            defaultValue='user@example.com'
+            control={control}
+            rules={{
+              required: 'Username is required',
+            }}
+            render={({ field, fieldState: { error } }) => (
+              <TextField {...field} fullWidth label='Username' error={!!error} helperText={error?.message} />
+            )}
+          />
+
+          <Controller
+            name='password'
+            defaultValue='string'
+            control={control}
+            rules={{
+              required: 'Password is required',
+            }}
+            render={({ field, fieldState: { error } }) => (
+              <InputPassword
+                {...field}
+                fullWidth
+                label='Password'
+                onKeyDown={handleKeyDown}
+                error={!!error}
+                helperText={error?.message}
+              />
+            )}
+          />
+
+          <LoadingButton fullWidth variant='contained' loading={isLoading} onClick={handleClickSubmit}>
             Login
-          </Button>
+          </LoadingButton>
         </div>
       </Paper>
     </Container>

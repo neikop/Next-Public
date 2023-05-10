@@ -1,17 +1,18 @@
-type PopupController = {
+type DialogController = {
   onSuccess?: () => void;
   onClose: () => void;
 };
 
-type SearchController = {
-  onChange: (...args: any) => void;
+type ISOString = string;
+
+type DBTimeAudit = {
+  createdAt: ISOString;
+  createdBy?: number;
+  updatedAt: ISOString;
+  updatedBy?: number;
 };
 
-type Address = `0x${string}`;
-
-type PopupStepStatus = 'IDLE' | 'LOADING' | 'ERROR' | 'TRYAGAIN' | 'SUCCESS';
-
-type PopupStepInfo = {
-  status: PopupStepStatus;
-  transactionHash?: string;
+type ErrorResponse = {
+  name: string;
+  message: string;
 };
