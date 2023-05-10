@@ -16,7 +16,7 @@ const AppProvider = ({ children }: Props) => {
         variant='success'
         autoHideDuration={3000}
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        classes={{ containerAnchorOriginTopRight: 'top-[72px]' }}
+        classes={{ containerAnchorOriginTopRight: 'top-[80px]' }}
       >
         <QueryClientProvider client={queryClient}>
           <AppHooks>
