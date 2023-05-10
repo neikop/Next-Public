@@ -1,10 +1,11 @@
+import { GridSortModel } from '@mui/x-data-grid';
 import { useCallback, useState } from 'react';
 
 type CommonSearch = {
   page?: number;
   size?: number;
   sortBy?: string;
-  sortDirection?: 'ASC' | 'DESC';
+  sortDirection?: SortDirectionType;
   searchText?: string;
   [key: string]: any;
 };
@@ -18,7 +19,7 @@ const useSearch = (search?: CommonSearch) => {
     ...search,
   });
 
-  const onSearchChange = useCallback((search: CommonSearch) => {
+  const onSearchChange = useCallback((search?: CommonSearch) => {
     setDataSearch((current) => ({
       ...current,
       page: 1,
@@ -26,7 +27,20 @@ const useSearch = (search?: CommonSearch) => {
     }));
   }, []);
 
-  return [dataSearch, onSearchChange];
+  const onSorterChange = useCallback((models: GridSortModel) => {
+    const column = models[0];
+    setDataSearch((current) => ({
+      ...current,
+      sortBy: column?.field,
+      sortDirection: column?.sort?.toUpperCase(),
+    }));
+  }, []);
+
+  return [dataSearch, onSearchChange, onSorterChange] as [
+    CommonSearch,
+    (search: CommonSearch) => void,
+    (sorter: GridSortModel) => void,
+  ];
 };
 
 export default useSearch;

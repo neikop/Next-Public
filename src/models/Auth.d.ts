@@ -28,7 +28,7 @@ type RegisterBody = {
   phoneNumber: string;
   adress: string;
   sex: AccountSexType;
-  dateOfBirth: ISOString;
+  dateOfBirth: ISODateString;
 };
 
 type RegisterResponse = LoginResponse;

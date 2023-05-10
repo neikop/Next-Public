@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { AccountList } from 'views/Account';
 import { Components } from 'views/Components';
 import { Home } from 'views/Home';
 import { Profile } from 'views/Profile';
@@ -28,6 +29,11 @@ const privateRoute = {
     path: '/buildings',
     name: 'Building',
     component: Box,
+  },
+  accounts: {
+    path: '/accounts',
+    name: 'Account',
+    component: AccountList,
   },
 };
 

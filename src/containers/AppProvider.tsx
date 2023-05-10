@@ -12,12 +12,7 @@ type Props = {
 const AppProvider = ({ children }: Props) => {
   return (
     <Provider store={store}>
-      <SnackbarProvider
-        variant='success'
-        autoHideDuration={3000}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        classes={{ containerAnchorOriginTopRight: 'top-[80px]' }}
-      >
+      <SnackbarProvider variant='success' autoHideDuration={3000}>
         <QueryClientProvider client={queryClient}>
           <AppHooks>
             <AppTheme>{children}</AppTheme>

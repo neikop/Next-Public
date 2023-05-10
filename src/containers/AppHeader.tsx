@@ -1,5 +1,5 @@
 import { Logout, Menu as MenuIcon } from '@mui/icons-material';
-import { AppBar, Chip, Divider, Drawer, IconButton, Toolbar } from '@mui/material';
+import { AppBar, Avatar, Chip, Divider, Drawer, IconButton, Toolbar } from '@mui/material';
 import { AppBreadcrumb, SwitchTheme } from 'components';
 import { AppMenu } from 'containers';
 import { useWindowSize } from 'hooks';
@@ -57,7 +57,7 @@ const AppHeader = () => {
 
           <div className='flex items-center justify-end gap-2'>
             <SwitchTheme />
-            <Chip className='font-bold' label={username} />
+            <Chip className='font-bold' label={username} avatar={<Avatar>M</Avatar>} />
             <IconButton onClick={handleClickLogout}>
               <Logout />
             </IconButton>

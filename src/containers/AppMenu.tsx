@@ -77,6 +77,7 @@ const AppMenu = () => {
       <MenuItem {...privateRoute.profile} />
       <MenuItem {...privateRoute.components} items={[privateRoute.componentsButton]} />
       <MenuItem {...privateRoute.buildings} />
+      <MenuItem {...privateRoute.accounts} />
     </List>
   );
 };

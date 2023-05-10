@@ -12,5 +12,30 @@ type AccountInfo = DBTimeAudit & {
   email: string;
   adress: string;
   sex: AccountSexType;
-  dateOfBirth: ISOString;
+  dateOfBirth: ISODateString;
+};
+
+type AccountItem = DBTimeAudit & {
+  id: number;
+  username: string;
+  isAdmin: boolean;
+  roels: RoleType[];
+};
+
+type AccountPaginateParams = PaginateParams & {
+  dateFrom?: ISOStrin;
+  dateTo?: ISODateString;
+};
+
+type AccountCreateBody = {
+  creator: number;
+  username: string;
+  password: string;
+  isAdmin: boolean;
+  roles?: RoleType[];
+  accountInfo: number;
+};
+
+type AccountUpdateBody = ByID & {
+  accountInfo?: AccountInfo;
 };

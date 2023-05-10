@@ -27,7 +27,7 @@ const onError = async (error: AxiosError<ErrorResponse>) => {
   const { response } = error;
   if (response) {
     const { data, status } = response;
-    enqueueSnackbar(data.message);
+    enqueueSnackbar(data.message, { variant: 'error' });
     if (status === 401) {
       store.dispatch(signOut());
     }

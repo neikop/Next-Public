@@ -55,10 +55,12 @@ const createAppTheme = (mode?: PaletteMode) =>
       },
       MuiDataGrid: {
         defaultProps: {
-          autoHeight: true,
           disableColumnMenu: true,
           hideFooter: true,
+          autoHeight: true,
           rowSelection: false,
+          paginationMode: 'server',
+          sortingMode: 'server',
           getRowHeight: () => 'auto',
           slots: {
             noRowsOverlay: GridEmpty,

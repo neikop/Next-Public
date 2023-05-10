@@ -14,6 +14,6 @@ const AvatarSize = styled(({ size, sizes, ...props }: AvatarSizeProps) => {
     return [size, size];
   }, [size, sizes]);
   return <Avatar sx={{ width, height }} {...props} />;
-})();
+});
 
 export default AvatarSize;
