@@ -1,5 +1,5 @@
-import { ArrowDropDown, ArrowRight } from '@mui/icons-material';
-import { Collapse, List, ListItemButton, ListItemText, styled } from '@mui/material';
+import { AccountTree, ArrowDropDown, ArrowRight, Dashboard, House, ManageAccounts, People } from '@mui/icons-material';
+import { Collapse, List, ListItemButton, ListItemIcon, ListItemText, styled } from '@mui/material';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { privateRoute } from 'routes';
@@ -13,6 +13,10 @@ const StyledListItem = styled(ListItemButton)({
   '&.MuiListItemButton-root:hover': {
     backgroundColor: 'var(--color-primary-300)',
   },
+  '.MuiListItemIcon-root': {
+    minWidth: 0,
+    marginRight: 8,
+  },
   '.MuiListItemText-primary': {
     fontWeight: 700,
   },
@@ -24,12 +28,13 @@ type SubMenuType = {
 };
 
 type MenuItemProps = {
+  icon?: JSX.Element;
   name?: string | JSX.Element;
   path: string;
   items?: SubMenuType[];
 };
 
-const MenuItem = ({ path, name, items }: MenuItemProps) => {
+const MenuItem = ({ icon, name, path, items }: MenuItemProps) => {
   const location = useLocation();
   const [open, setOpen] = useState(location.pathname.startsWith(path));
 
@@ -41,12 +46,14 @@ const MenuItem = ({ path, name, items }: MenuItemProps) => {
     <>
       {items ? (
         <StyledListItem selected={isContain} onClick={() => setOpen(!open)}>
+          <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText>{name}</ListItemText>
           {!open ? <ArrowRight /> : <ArrowDropDown />}
         </StyledListItem>
       ) : (
         <Link to={path}>
           <StyledListItem selected={isSelected}>
+            <ListItemIcon>{icon}</ListItemIcon>
             <ListItemText>{name}</ListItemText>
           </StyledListItem>
         </Link>
@@ -73,11 +80,11 @@ const MenuItem = ({ path, name, items }: MenuItemProps) => {
 const AppMenu = () => {
   return (
     <List className='flex flex-col'>
-      <MenuItem {...privateRoute.home} />
-      <MenuItem {...privateRoute.profile} />
-      <MenuItem {...privateRoute.components} items={[privateRoute.componentsButton]} />
-      <MenuItem {...privateRoute.buildings} />
-      <MenuItem {...privateRoute.accounts} />
+      <MenuItem {...privateRoute.home} icon={<Dashboard />} />
+      <MenuItem {...privateRoute.buildings} icon={<House />} />
+      <MenuItem {...privateRoute.accounts} icon={<People />} />
+      <MenuItem {...privateRoute.profile} icon={<ManageAccounts />} />
+      <MenuItem {...privateRoute.components} icon={<AccountTree />} items={[privateRoute.componentsButton]} />
     </List>
   );
 };
