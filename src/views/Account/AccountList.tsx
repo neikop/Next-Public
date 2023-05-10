@@ -2,6 +2,7 @@ import { Add, DeleteOutline, EditOutlined, Refresh } from '@mui/icons-material';
 import { Button, Dialog, Pagination, Paper, Switch } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { useQuery } from '@tanstack/react-query';
+import { CommonSearch } from 'components/common';
 import { useSearch } from 'hooks';
 import { useState } from 'react';
 import { accountService } from 'services';
@@ -24,7 +25,9 @@ const AccountList = () => {
 
   return (
     <>
-      <div className='flex items-center justify-end gap-3'>
+      <div className='flex items-start justify-end gap-3'>
+        <CommonSearch items={[{ label: 'Search', key: 'searchText' }]} onChange={onSearchChange} />
+
         <Button variant='contained' color='success' startIcon={<Add />} onClick={() => setOpenCreatePopup(true)}>
           Create Account
         </Button>
