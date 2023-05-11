@@ -8,7 +8,7 @@ import { authRoute, privateRoute } from 'routes';
 
 const PrivateLayout = () => {
   const navigator = useNavigate();
-  const { isTablet } = useWindowSize();
+  const { isDesktop } = useWindowSize();
   const { isLoggedIn } = useSelector(profileSelector);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const PrivateLayout = () => {
   }, [isLoggedIn, navigator]);
 
   return (
-    <main style={isTablet ? {} : { marginLeft: '320px' }}>
+    <main style={isDesktop ? { marginLeft: '320px' } : {}}>
       <AppHeader />
       <div className='p-6'>
         <Routes>

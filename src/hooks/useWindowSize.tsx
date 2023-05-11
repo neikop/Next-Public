@@ -15,7 +15,7 @@ const useWindowSize = () => {
     return () => window.removeEventListener('resize', handleWindowSizeChange);
   }, []);
 
-  return { windowSize, isMobile: windowSize.width < 900, isTablet: windowSize.width < 1200 };
+  return { windowSize, isMobile: windowSize.width < 900, isDesktop: windowSize.width >= 1600 };
 };
 
 export default useWindowSize;

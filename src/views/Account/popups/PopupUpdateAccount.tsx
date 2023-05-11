@@ -3,6 +3,8 @@ import { DialogActions, DialogContent, DialogTitle, FormControlLabel, Grid, Swit
 import { useMutation } from '@tanstack/react-query';
 import { enqueueSnackbar } from 'notistack';
 import { Controller, useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
+import { profileSelector } from 'reducers/profileSlice';
 import { accountService, queryClient } from 'services';
 
 type Props = PopupController & {
@@ -10,6 +12,7 @@ type Props = PopupController & {
 };
 
 const PopupUpdateAccount = ({ item: account, onClose }: Props) => {
+  const { id } = useSelector(profileSelector);
   const { control, handleSubmit } = useForm({ mode: 'onChange' });
 
   const { mutate: updateAccount, isLoading } = useMutation(accountService.updateAccount, {
@@ -26,8 +29,10 @@ const PopupUpdateAccount = ({ item: account, onClose }: Props) => {
         delete values.password;
       }
       updateAccount({
-        ...account,
         ...(values as AccountUpdateBody),
+        id: account.id,
+        creator: id!,
+        accountInfo: 0,
       });
     })();
   };

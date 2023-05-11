@@ -1,5 +1,5 @@
 import { Add, DeleteOutline, EditOutlined, Refresh } from '@mui/icons-material';
-import { Button, Dialog, Pagination, Paper, Switch } from '@mui/material';
+import { Button, Dialog, Paper, Switch } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { useQuery } from '@tanstack/react-query';
 import { CommonSearch } from 'components/common';
@@ -9,7 +9,7 @@ import { accountService } from 'services';
 import { PopupCreateAccount, PopupDeleteAccount, PopupUpdateAccount } from './popups';
 
 const AccountList = () => {
-  const [dataSearch, onSearchChange, onSorterChange] = useSearch();
+  const { dataSearch, onSearchChange, onSortChange, onPaginationChange } = useSearch();
 
   const [openCreatePopup, setOpenCreatePopup] = useState(false);
   const [openUpdatePopup, setOpenUpdatePopup] = useState(false);
@@ -39,14 +39,12 @@ const AccountList = () => {
       <Paper elevation={0} className='my-6'>
         <DataGrid
           loading={isFetching}
-          getRowId={(row) => row.username}
+          getRowId={(row) => row.id}
+          getRowHeight={() => 64}
           rows={items}
-          initialState={{
-            sorting: {
-              sortModel: [{ field: 'createdAt', sort: 'desc' }],
-            },
-          }}
-          onSortModelChange={onSorterChange}
+          rowCount={total}
+          onSortModelChange={onSortChange}
+          onPaginationModelChange={onPaginationChange}
           columns={[
             {
               field: 'username',
@@ -111,18 +109,11 @@ const AccountList = () => {
           ]}
         />
       </Paper>
-      <div className='flex justify-center'>
-        <Pagination
-          page={dataSearch.page}
-          count={Math.ceil(total / dataSearch.size!)}
-          onChange={(event, value) => onSearchChange({ page: value })}
-        />
-      </div>
 
-      <Dialog open={openCreatePopup}>
+      <Dialog open={openCreatePopup} maxWidth='xs'>
         <PopupCreateAccount onClose={() => setOpenCreatePopup(false)} />
       </Dialog>
-      <Dialog open={openUpdatePopup}>
+      <Dialog open={openUpdatePopup} maxWidth='xs'>
         <PopupUpdateAccount onClose={() => setOpenUpdatePopup(false)} item={itemChoice!} />
       </Dialog>
       <Dialog open={openDeletePopup} maxWidth='xs'>

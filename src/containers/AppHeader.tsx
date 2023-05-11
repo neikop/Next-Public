@@ -12,7 +12,7 @@ import { privateRoute } from 'routes';
 const AppHeader = () => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const { isTablet } = useWindowSize();
+  const { isDesktop } = useWindowSize();
   const { username } = useSelector(profileSelector);
 
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -28,9 +28,9 @@ const AppHeader = () => {
   return (
     <>
       <Drawer
-        variant={isTablet ? 'temporary' : 'persistent'}
+        variant={isDesktop ? 'persistent' : 'temporary'}
         anchor='left'
-        open={isTablet ? openDrawer : true}
+        open={isDesktop ? true : openDrawer}
         onClose={() => setOpenDrawer(false)}
         PaperProps={{ style: { width: '320px', padding: '8px 16px' } }}
       >
@@ -46,7 +46,7 @@ const AppHeader = () => {
 
       <AppBar position='sticky' elevation={2} color='inherit'>
         <Toolbar>
-          {isTablet && (
+          {!isDesktop && (
             <IconButton onClick={() => setOpenDrawer(true)}>
               <MenuIcon />
             </IconButton>

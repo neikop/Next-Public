@@ -4,14 +4,14 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { privateRoute } from 'routes';
 
-const StyledListItem = styled(ListItemButton)({
+const StyledListItem = styled(ListItemButton)(({ theme }) => ({
   borderRadius: 16,
   marginBottom: 8,
   '&.MuiListItemButton-root.Mui-selected': {
-    backgroundColor: 'var(--color-primary-200)',
+    backgroundColor: theme.palette.mode === 'light' ? '#bbdefb' : '#37474f',
   },
   '&.MuiListItemButton-root:hover': {
-    backgroundColor: 'var(--color-primary-300)',
+    backgroundColor: theme.palette.mode === 'light' ? '#90caf9' : '#455a64',
   },
   '.MuiListItemIcon-root': {
     minWidth: 0,
@@ -20,7 +20,7 @@ const StyledListItem = styled(ListItemButton)({
   '.MuiListItemText-primary': {
     fontWeight: 700,
   },
-});
+}));
 
 type SubMenuType = {
   name?: string | JSX.Element;
@@ -62,7 +62,7 @@ const MenuItem = ({ icon, name, path, items }: MenuItemProps) => {
       {items && (
         <Collapse in={open}>
           <List
-            className='ml-3 py-0'
+            className='ml-6 py-0'
             sx={{
               '.MuiListItemButton-root': { padding: '4px 16px' },
             }}

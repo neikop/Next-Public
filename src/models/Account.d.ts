@@ -37,5 +37,10 @@ type AccountCreateBody = {
 };
 
 type AccountUpdateBody = ByID & {
-  accountInfo?: AccountInfo;
+  creator: number;
+  username: string;
+  password: string;
+  isAdmin: boolean;
+  roles?: RoleType[];
+  accountInfo: number;
 };

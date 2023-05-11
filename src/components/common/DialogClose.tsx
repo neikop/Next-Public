@@ -1,19 +1,16 @@
 import { Close } from '@mui/icons-material';
-import { IconButton, IconButtonProps } from '@mui/material';
+import { IconButton, IconButtonProps, styled } from '@mui/material';
 
-const DialogClose = (props: IconButtonProps) => {
+const DialogClose = styled((props: IconButtonProps) => {
   return (
-    <IconButton
-      sx={{
-        position: 'absolute',
-        top: 16,
-        right: 16,
-      }}
-      {...props}
-    >
+    <IconButton {...props}>
       <Close />
     </IconButton>
   );
-};
+})(() => ({
+  position: 'absolute',
+  top: 16,
+  right: 16,
+}));
 
 export default DialogClose;

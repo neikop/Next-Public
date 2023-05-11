@@ -2,7 +2,7 @@ import { ArrowDropDown, ArrowDropUp } from '@mui/icons-material';
 import { CssBaseline, LinearProgress, PaletteMode, ThemeProvider } from '@mui/material';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import type {} from '@mui/x-data-grid/themeAugmentation';
-import { GridEmpty } from 'components/common';
+import { GridEmpty, GridFooter } from 'components/common';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { themeSelector } from 'reducers/themeSlice';
@@ -33,13 +33,6 @@ const createAppTheme = (mode?: PaletteMode) =>
           arrow: true,
         },
       },
-      MuiPagination: {
-        defaultProps: {
-          variant: 'outlined',
-          shape: 'rounded',
-          size: 'large',
-        },
-      },
       MuiTextField: {
         defaultProps: {
           variant: 'outlined',
@@ -55,16 +48,25 @@ const createAppTheme = (mode?: PaletteMode) =>
       },
       MuiDataGrid: {
         defaultProps: {
-          disableColumnMenu: true,
-          hideFooter: true,
-          autoHeight: true,
           rowSelection: false,
-          paginationMode: 'server',
-          sortingMode: 'server',
+          disableColumnMenu: true,
+          autoHeight: true,
           getRowHeight: () => 'auto',
+          sortingMode: 'server',
+          paginationMode: 'server',
+          pageSizeOptions: [10, 20, 50, 100],
+          initialState: {
+            sorting: {
+              sortModel: [{ field: 'createdAt', sort: 'desc' }],
+            },
+            pagination: {
+              paginationModel: { page: 0, pageSize: 10 },
+            },
+          },
           slots: {
-            noRowsOverlay: GridEmpty,
             loadingOverlay: LinearProgress,
+            noRowsOverlay: GridEmpty,
+            footer: GridFooter,
             columnSortedAscendingIcon: ArrowDropUp,
             columnSortedDescendingIcon: ArrowDropDown,
           },

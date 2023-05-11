@@ -1,6 +1,7 @@
 import { DirectionsRun, Search } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Button, Container } from '@mui/material';
+import { AvatarSize } from 'components/common';
 import { useState } from 'react';
 
 const Components = () => {
@@ -8,6 +9,10 @@ const Components = () => {
 
   return (
     <Container className='space-y-10'>
+      <div className='flex items-end gap-3'>
+        <AvatarSize />
+        <AvatarSize sizes='small' />
+      </div>
       <div className='dark:text-[white]'>
         <span>Toggle dark mode by Tailwindcss</span>
         <LoadingButton

@@ -1,4 +1,4 @@
-import { GridSortModel } from '@mui/x-data-grid';
+import { GridPaginationModel, GridSortModel } from '@mui/x-data-grid';
 import { useCallback, useState } from 'react';
 
 type CommonSearch = {
@@ -27,7 +27,7 @@ const useSearch = (search?: CommonSearch) => {
     }));
   }, []);
 
-  const onSorterChange = useCallback((models: GridSortModel) => {
+  const onSortChange = useCallback((models: GridSortModel) => {
     const column = models[0];
     setDataSearch((current) => ({
       ...current,
@@ -36,11 +36,15 @@ const useSearch = (search?: CommonSearch) => {
     }));
   }, []);
 
-  return [dataSearch, onSearchChange, onSorterChange] as [
-    CommonSearch,
-    (search: CommonSearch) => void,
-    (sorter: GridSortModel) => void,
-  ];
+  const onPaginationChange = useCallback((models: GridPaginationModel) => {
+    setDataSearch((current) => ({
+      ...current,
+      page: models.page + 1,
+      size: models.pageSize,
+    }));
+  }, []);
+
+  return { dataSearch, onSearchChange, onSortChange, onPaginationChange };
 };
 
 export default useSearch;
