@@ -19,7 +19,7 @@ const AppBreadcrumb = () => {
         </IconButton>
       </Link>
       {routes.map((item, index) => (
-        <Typography key={index} variant='h6' color='primary' fontWeight={700}>
+        <Typography key={index} variant='h4' color='primary'>
           {item?.name}
         </Typography>
       ))}

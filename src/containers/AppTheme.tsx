@@ -78,6 +78,12 @@ const createAppTheme = (mode?: PaletteMode) =>
     typography: {
       fontFamily: 'Nunito Sans',
       button: { fontWeight: 700, textTransform: 'none' },
+      h1: { fontSize: 56, lineHeight: 1.2, fontWeight: 700 },
+      h2: { fontSize: 48, lineHeight: 1.2, fontWeight: 700 },
+      h3: { fontSize: 32, lineHeight: 1.2, fontWeight: 700 },
+      h4: { fontSize: 24, lineHeight: 1.2, fontWeight: 700 },
+      h5: { fontSize: 18, lineHeight: 1.2, fontWeight: 700 },
+      h6: { fontSize: 16, lineHeight: 1.2, fontWeight: 700 },
     },
     palette: {
       primary: {

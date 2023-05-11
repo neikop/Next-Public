@@ -1,5 +1,5 @@
 import { Logout, Menu as MenuIcon } from '@mui/icons-material';
-import { AppBar, Avatar, Chip, Divider, Drawer, IconButton, Toolbar } from '@mui/material';
+import { AppBar, Avatar, Chip, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material';
 import { AppBreadcrumb, SwitchTheme } from 'components';
 import { AppMenu } from 'containers';
 import { useWindowSize } from 'hooks';
@@ -38,7 +38,9 @@ const AppHeader = () => {
           <Link to={privateRoute.home.path}>
             <img src={require('assets/icons/Muragi.svg').default} className='h-[40px]' />
           </Link>
-          <span className='text-2xl font-bold text-primary-main'>SF Office</span>
+          <Typography variant='h4' color='primary'>
+            SF Office
+          </Typography>
         </div>
         <Divider className='my-[8px]' />
         <AppMenu />

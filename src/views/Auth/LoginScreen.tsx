@@ -1,5 +1,5 @@
 import { LoadingButton } from '@mui/lab';
-import { Container, Paper, TextField } from '@mui/material';
+import { Container, Paper, TextField, Typography } from '@mui/material';
 import { useMutation } from '@tanstack/react-query';
 import { InputPassword } from 'components/common';
 import { enqueueSnackbar } from 'notistack';
@@ -41,7 +41,9 @@ const LoginScreen = () => {
   return (
     <Container maxWidth='sm'>
       <Paper className='space-y-6 p-6'>
-        <div className='text-center text-2xl font-bold'>LoginScreen</div>
+        <Typography variant='h4' className='text-center'>
+          Login Screen
+        </Typography>
 
         <div className='flex flex-col items-center justify-center gap-6'>
           <Controller
