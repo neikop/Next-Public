@@ -35,7 +35,7 @@ const onError = async (error: AxiosError<ErrorResponse>) => {
   return Promise.reject(error);
 };
 
-const client = axios.create({ baseURL: API_URL + '/sfo-core/api' });
+const client = axios.create({ baseURL: API_URL + '/user/api' });
 client.interceptors.request.use(beforeRequest);
 client.interceptors.response.use(onResponse, onError);
 
